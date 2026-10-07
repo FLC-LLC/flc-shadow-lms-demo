@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FLC Shadow Exam Demo</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="contact-bar">
+    <span>1117 Futurity St., Frederick, MD 21702</span>
+    <span>9711 Washingtonian Blvd., Ste. 550, Gaithersburg, MD 20878</span>
+    <span>240-626-3286 / 240-651-9975</span>
+  </div>
+
+  <header class="site-header">
+    <div class="brand">
+      <div class="brand-mark">FLC</div>
+      <div>
+        <strong>FAVOR LOVING CARE LLC</strong>
+        <span>Healthcare Training</span>
+      </div>
+    </div>
+    <nav aria-label="Shadow demo navigation">
+      <a href="#course">Services</a>
+      <a href="#checkout">Registration</a>
+      <a href="#exam">Exam</a>
+      <a href="#admin">Admin</a>
+    </nav>
+    <button id="openGuideTop" class="appointment" type="button">Guided Demo</button>
+  </header>
+
+  <section class="hero">
+    <div>
+      <p class="eyebrow">Private FLC Shadow Demo</p>
+      <h1>CMT Training Exam Path</h1>
+      <p>One protected test path from student registration to fake payment, exam grading, and staff verification.</p>
+      <div class="hero-actions">
+        <a href="#checkout">Start the student path</a>
+        <button id="openGuideHero" type="button">Show me how this works</button>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <section class="guide-card" aria-labelledby="guide-title">
+      <div>
+        <p class="eyebrow">For Betty</p>
+        <h2 id="guide-title">Try the complete student-to-admin loop</h2>
+        <p>This page is a private shadow demo. It charges no money and changes no live FLC system.</p>
+      </div>
+      <ol>
+        <li>Run fake payment with the prefilled test card.</li>
+        <li>Take the Chapter 1 Section 1 exam.</li>
+        <li>Check the staff result in Admin Verification.</li>
+      </ol>
+      <button id="openGuideCard" type="button">Open guided walkthrough</button>
+    </section>
+
+    <section class="intro">
+      <div>
+        <p class="eyebrow">Plan B proof</p>
+        <h2>Google Form exam, rebuilt as an FLC-owned workflow</h2>
+        <p>This public-safe demo proves the operating loop without Thinkific access, real payments, or live exam exposure.</p>
+      </div>
+      <div class="status-strip">
+        <div><strong id="paymentStatus">Not paid</strong><span>payment</span></div>
+        <div><strong id="examStatus">Locked</strong><span>exam</span></div>
+        <div><strong id="adminStatus">No result</strong><span>admin</span></div>
+      </div>
+    </section>
+
+    <section id="course" class="band">
+      <div class="copy">
+        <p class="eyebrow">Featured course</p>
+        <h2>CMT Training: Chapter 1 Section 1</h2>
+        <p>Students register, complete a sandbox checkout, and unlock a sample exam that demonstrates the FLC-owned workflow.</p>
+        <ul>
+          <li>Five-question assessment</li>
+          <li>100 total points</li>
+          <li>Automatic pass/fail result</li>
+          <li>Staff verification after submission</li>
+        </ul>
+      </div>
+      <div class="course-card">
+        <h3>Medication Technician Training</h3>
+        <p>Chapter 1 Section 1 exam path</p>
+        <strong>$0.00 sandbox checkout</strong>
+        <a href="#checkout">Begin registration</a>
+      </div>
+    </section>
+
+    <section id="checkout" class="panel">
+      <div class="section-head">
+        <p class="eyebrow">Registration and fake checkout</p>
+        <h2>Student Information</h2>
+      </div>
+      <form id="checkoutForm" class="form-grid">
+        <label>
+          Student name
+          <input id="studentName" required value="Avery Johnson">
+        </label>
+        <label>
+          Email
+          <input id="studentEmail" type="email" required value="avery.johnson.demo@example.com">
+        </label>
+        <label>
+          Card number
+          <input id="cardNumber" inputmode="numeric" required value="4242 4242 4242 4242">
+        </label>
+        <label>
+          Expiration
+          <input id="cardExpiry" required value="12/30">
+        </label>
+        <label>
+          CVC
+          <input id="cardCvc" inputmode="numeric" required value="123">
+        </label>
+        <label>
+          ZIP
+          <input id="cardZip" inputmode="numeric" required value="21702">
+        </label>
+        <div class="form-note">
+          Sandbox only. Use <strong>4242 4242 4242 4242</strong> for success or <strong>4000 0000 0000 0002</strong> for decline.
+        </div>
+        <button type="submit">Run fake payment</button>
+      </form>
+      <div id="checkoutMessage" class="message" role="status"></div>
+    </section>
+
+    <section id="exam" class="panel">
+      <div class="section-head">
+        <p class="eyebrow">Unlocked after fake payment</p>
+        <h2>Chapter 1 Section 1 Exam</h2>
+        <p class="copyright-note">Public-safe workflow demo. Real exam content remains private until FLC chooses a protected hosting path.</p>
+      </div>
+      <div id="examLocked" class="locked">
+        Complete the sandbox checkout to unlock the exam.
+      </div>
+      <form id="examForm" class="exam hidden"></form>
+      <div id="examResult" class="result hidden"></div>
+    </section>
+
+    <section id="admin" class="panel">
+      <div class="section-head">
+        <p class="eyebrow">Staff view</p>
+        <h2>Admin Verification</h2>
+      </div>
+      <div id="adminView" class="admin-output" aria-live="polite">
+        <p>No student result yet.</p>
+      </div>
+      <div class="admin-actions">
+        <button id="loadAdmin" type="button">Refresh admin view</button>
+        <button id="resetDemo" type="button" class="secondary">Reset demo</button>
+      </div>
+    </section>
+  </main>
+
+  <div id="guideModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-card">
+      <button id="closeGuide" class="modal-close" type="button" aria-label="Close guided walkthrough">x</button>
+      <p class="eyebrow">Guided walkthrough</p>
+      <h2 id="modalTitle">One playable FLC exam quest</h2>
+      <div id="guideStep" class="guide-step"></div>
+      <div class="modal-actions">
+        <button id="prevGuide" type="button" class="secondary">Back</button>
+        <button id="nextGuide" type="button">Next</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
