@@ -12,7 +12,9 @@ It demonstrates:
 - exam unlock
 - automatic grading
 - pass/fail result
+- printable certificate preview
 - Betty/admin verification view
+- yearly platform cost comparison
 
 ## How To Test
 
@@ -41,7 +43,26 @@ A fake student can:
 3. Unlock the exam.
 4. Submit the exam.
 5. Receive a score and pass/fail result.
-6. Appear in the admin view.
+6. Open the certificate PDF preview.
+7. Appear in the admin view.
+
+## Certificate Preview
+
+`certificate-demo.pdf` is a demo-only printable certificate.
+
+It is modeled after FLC's old manual certificate workflow: blue border, completion language, signature lines, and gold seal.
+
+It is not an official FLC credential, MBON record, or live certificate issuance system.
+
+## Yearly Cost Planning
+
+The public page includes a simple comparison for:
+
+- NanaSoft-LearnWord_Mana-Custom
+- Thinkific
+- LearnWorlds
+
+The numbers are platform-planning estimates only. Re-price before contract approval and keep NanaSoft build/maintenance labor separate from SaaS platform fees.
 
 ## Boundaries
 

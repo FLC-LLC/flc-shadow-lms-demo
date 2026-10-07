@@ -8,8 +8,7 @@
 </head>
 <body>
   <div class="contact-bar">
-    <span>1117 Futurity St., Frederick, MD 21702</span>
-    <span>9711 Washingtonian Blvd., Ste. 550, Gaithersburg, MD 20878</span>
+    <span>19809 Executive Park Circle, Germantown, MD 20874</span>
     <span>240-626-3286 / 240-651-9975</span>
   </div>
 
@@ -25,6 +24,8 @@
       <a href="#course">Services</a>
       <a href="#checkout">Registration</a>
       <a href="#exam">Exam</a>
+      <a href="#certificate">Certificate</a>
+      <a href="#costs">Costs</a>
       <a href="#admin">Admin</a>
     </nav>
     <button id="openGuideTop" class="appointment" type="button">Guided Demo</button>
@@ -52,7 +53,7 @@
       <ol>
         <li>Run fake payment with the prefilled test card.</li>
         <li>Take the Chapter 1 Section 1 exam.</li>
-        <li>Check the staff result in Admin Verification.</li>
+        <li>Open the certificate preview, then check Admin Verification.</li>
       </ol>
       <button id="openGuideCard" type="button">Open guided walkthrough</button>
     </section>
@@ -67,6 +68,7 @@
         <div><strong id="paymentStatus">Not paid</strong><span>payment</span></div>
         <div><strong id="examStatus">Locked</strong><span>exam</span></div>
         <div><strong id="adminStatus">No result</strong><span>admin</span></div>
+        <div><strong>PDF</strong><span>certificate</span></div>
       </div>
     </section>
 
@@ -80,6 +82,7 @@
           <li>100 total points</li>
           <li>Automatic pass/fail result</li>
           <li>Staff verification after submission</li>
+          <li>Printable certificate preview after passing</li>
         </ul>
       </div>
       <div class="course-card">
@@ -139,6 +142,74 @@
       </div>
       <form id="examForm" class="exam hidden"></form>
       <div id="examResult" class="result hidden"></div>
+    </section>
+
+    <section id="certificate" class="panel certificate-panel">
+      <div class="section-head">
+        <p class="eyebrow">Completion certificate</p>
+        <h2>Printable Certificate Preview</h2>
+        <p>This is a demo PDF modeled after FLC's existing certificate workflow: royal-blue frame, gold seal, completion text, and staff review before official use.</p>
+      </div>
+      <div class="certificate-grid">
+        <div class="certificate-preview" aria-label="Certificate preview">
+          <div class="cert-border">
+            <p>Certificate of Completion</p>
+            <strong>Avery Johnson</strong>
+            <span>CMT Training: Public-Safe Demo Exam</span>
+            <em>Gold seal PDF preview</em>
+          </div>
+        </div>
+        <div class="certificate-copy">
+          <h3>What Betty can test</h3>
+          <p>After a passing result, staff can open the PDF in the browser, download it, or print it. In production, this becomes the real certificate generation step.</p>
+          <div class="button-row">
+            <a class="button-link" href="./certificate-demo.pdf" target="_blank" rel="noopener">Open certificate PDF</a>
+            <button id="printCertificate" type="button" class="secondary">Print certificate</button>
+          </div>
+          <p class="fine-print">Demo certificate only. It is not an official FLC credential or MBON submission.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="costs" class="panel">
+      <div class="section-head">
+        <p class="eyebrow">Migration cost view</p>
+        <h2>Yearly Platform Cost Comparison</h2>
+        <p>For planning only: full migration of the course workflow and the public site. Payment processing, domain/email, private hosting, and build labor are separate.</p>
+      </div>
+      <div class="table-wrap">
+        <table class="cost-table">
+          <thead>
+            <tr>
+              <th>Option</th>
+              <th>Typical yearly platform cost</th>
+              <th>What FLC gets</th>
+              <th>Planning note</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>NanaSoft-LearnWord_Mana-Custom</strong></td>
+              <td>$0 SaaS LMS subscription in this demo; private hosting/security estimate TBD</td>
+              <td>FLC-owned site, fake-to-real checkout path, exam logic, admin verification, certificate workflow</td>
+              <td>Best control and customization. Requires NanaSoft build/maintenance plan before production.</td>
+            </tr>
+            <tr>
+              <td><strong>Thinkific</strong></td>
+              <td>About $978/year Start or $1,968/year Grow; higher tiers if FLC outgrows limits</td>
+              <td>Hosted course platform with existing LMS structure</td>
+              <td>Fastest familiar path, but public site replacement and custom admin flow remain separate work.</td>
+            </tr>
+            <tr>
+              <td><strong>LearnWorlds</strong></td>
+              <td>About $948/year Pro Trainer or $2,988/year Learning Center</td>
+              <td>Hosted LMS with stronger course-site features</td>
+              <td>Good packaged LMS option; still less custom than an FLC-owned workflow.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="fine-print">Public demo costs are intentionally conservative and should be re-priced before contract approval.</p>
     </section>
 
     <section id="admin" class="panel">

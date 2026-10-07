@@ -80,6 +80,16 @@ const guideSteps = [
     target: "#admin",
     title: "Verify the result",
     body: "The Admin Verification screen shows Betty the business proof: student, email, course, fake payment, score, pass/fail, completed time, and next action."
+  },
+  {
+    target: "#certificate",
+    title: "Open the certificate",
+    body: "The certificate section opens a printable PDF preview in the browser. This proves the future staff workflow without issuing a real credential."
+  },
+  {
+    target: "#costs",
+    title: "Compare the yearly platform costs",
+    body: "The cost table gives Betty the business comparison: FLC-owned custom path, Thinkific, and LearnWorlds."
   }
 ];
 
@@ -176,9 +186,9 @@ function gradeExam(formData) {
     status: passed ? "Pass" : "Fail",
     passScore: examConfig.passScore,
     completedAt: new Date().toLocaleString(),
-    certificateStatus: passed ? "Completion placeholder ready for staff review" : "No certificate placeholder until passing score",
+    certificateStatus: passed ? "Printable certificate PDF preview ready for staff review" : "No certificate PDF until passing score",
     nextStaffAction: passed
-      ? "Review completion and decide whether to issue the normal FLC certificate/completion record."
+      ? "Review completion, open the certificate preview, and decide whether to issue the normal FLC completion record."
       : "Follow up with the student about retake or remediation policy.",
     answers
   };
@@ -227,6 +237,7 @@ function renderAdmin() {
     </table>
     <p class="next-action">${escapeHtml(result.nextStaffAction)}</p>
     <p><strong>Certificate status:</strong> ${escapeHtml(result.certificateStatus)}</p>
+    ${result.status === "Pass" ? '<p><a class="button-link" href="./certificate-demo.pdf" target="_blank" rel="noopener">Open printable certificate PDF</a></p>' : ""}
   `;
 }
 
@@ -309,6 +320,10 @@ $("examForm").addEventListener("submit", (event) => {
 });
 
 $("loadAdmin").addEventListener("click", renderAdmin);
+
+$("printCertificate").addEventListener("click", () => {
+  window.open("./certificate-demo.pdf", "_blank", "noopener");
+});
 
 ["openGuideTop", "openGuideHero", "openGuideCard"].forEach((id) => {
   $(id).addEventListener("click", () => openGuide(0));
